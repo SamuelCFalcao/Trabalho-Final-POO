@@ -5,6 +5,10 @@ public abstract class Produto {
     static float desconto;
 
     public float calcularPrecoFinal() {
+        this.preco = preco;
+        this.desconto = desconto;
+
+        return(preco * desconto);
     }
 
     static void setDesconto(float valor) {
