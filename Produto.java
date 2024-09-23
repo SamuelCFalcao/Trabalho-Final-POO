@@ -1,16 +1,20 @@
 public abstract class Produto {
-    public string nome;
+    public String nome;
     protected float preco;
-    private int quantidadeEstoque;
-    static float desconto;
 
-    public float calcularPrecoFinal() {
-        this.preco = preco;
-        this.desconto = desconto;
-
-        return(preco * desconto);
+    public String setNome(String nome) {
+        this.nome = nome;
     }
 
-    static void setDesconto(float valor) {
+    public void getNome() {
+        return nome;
+    }
+
+    public float setPreco(float preco) {
+        this.preco = preco;
+    }
+
+    public void getPreco() {
+        return preco;
     }
 }
