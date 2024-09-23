@@ -1,7 +1,14 @@
 public class Atendente {
-    public string nome;
-    public string matricula;
+    private final String nome;
+    private final int cpf;
 
-    public void registrarPedido(Pedido pedido) {
+    public Atendente(String nome, int cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public void receberPedido(Venda venda) {
+        System.out.println("Pedido recebido pelo atendente " + nome + cpf);
+        venda.realizarPedido(1);
     }
 }

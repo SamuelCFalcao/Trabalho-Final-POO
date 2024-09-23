@@ -37,10 +37,11 @@ public abstract class Estoque{
 		}
 	}
 	
-	public static void update(int a) {
+	public static void update(int produtovendido) {
+        int a = produtovendido ;
         //Verifica se é Salgado, Bebida ou Bombom
         if (a == 1){
-            Salgado produto = new Salgado();
+            Lanche produto = new Lanche();
         }
         else if (a == 2){
             Bebida produto = new Bebida();
