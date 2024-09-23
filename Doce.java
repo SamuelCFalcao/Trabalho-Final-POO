@@ -1,3 +1,2 @@
-public class Doce {
-    
+public class Doce {   
 }
