@@ -1,8 +1,8 @@
 public class Doce {   
     public String sabor;
     
-    public void removerEstoque(int quantidade){
-        Estoque.removerEstoque(quantidade);
+    public void removerProduto(String nome){
+        Estoque.removerProduto(nome);
     }
 
     public void calculaVolume(float peso) { 

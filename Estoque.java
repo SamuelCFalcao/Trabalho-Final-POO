@@ -8,7 +8,7 @@ public abstract class Estoque {
 	//Adiciona um produto novo ao estoque
 	public static void adicionarProduto(Produto produto) {
 		produtos.add(produto);
-		System.out.println("Adicionadas "+produto.getQuantidade()+" unidades de "+produto.nome());
+		System.out.println("Adicionadas "+produto.getQuantidade()+" unidades de "+produto.getNome());
 	}
 
 	//Lista todos os produtos no estoque
@@ -38,8 +38,8 @@ public abstract class Estoque {
 	public static void removerProduto(String nome) {
 		boolean deletado = false;
 		for(Produto produto : produtos) {
-			if(produtos.getNome().equalIsIgnoreCase(nome)) {
-				produtos.remove(i);
+			if(produto.getNome() == nome) {
+				produtos.remove(produto);
 				System.out.println(nome + " foi removido do estoque");
 				deletado = true;
 			} 

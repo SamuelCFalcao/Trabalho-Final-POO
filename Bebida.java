@@ -3,6 +3,7 @@ public class Bebida extends Produto{
     public void removerProduto(String nome){
         Estoque.removerProduto(nome);
     }
+    
     @Override
     public void calculaVolume(float peso) {
         if(peso >= 1000) {
