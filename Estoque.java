@@ -19,13 +19,21 @@ public abstract class Estoque {
 	}
 
 	//Atualizar quantidade de produtos no estoque
-	public static void atualizarQuantidade(String nome, int novaQuant) {
+	public static void atualizarQuantidade(String nome, int qtdComprada) {
 		//Variável que verifica se o produto existe no estoque
 		boolean disponivel = false;
+		int qtdFinal = 0;
         for (Produto produto : produtos) {
             if (produto.getNome().equalsIgnoreCase(nome)) {
-                produto.setQuantidade(novaQuant);
-                System.out.println("Quantidade do produto " + nome + " atualizada para " + novaQuant+" unidades");
+				qtdFinal = produto.getQuantidade() - qtdComprada;
+				//Valida se há suficiente no estoque
+				if (qtdFinal < 0){
+					qtdComprada = qtdComprada + qtdFinal; //Resulta na diferença
+					qtdFinal = 0;
+					System.out.println("Não há "+nome+" suficiente no estoque, compradas apenas "+qtdComprada+" unidades");
+				}
+                produto.setQuantidade(qtdFinal);
+                System.out.println("Quantidade do produto " + nome + " no estoque atualizada para " + qtdFinal+" unidades");
 				disponivel = true;
             }
         }
@@ -38,7 +46,7 @@ public abstract class Estoque {
 	public static void removerProduto(String nome) {
 		boolean deletado = false;
 		for(Produto produto : produtos) {
-			if(produto.getNome() == nome) {
+			if(produto.getNome().equalsIgnoreCase(nome)) {
 				produtos.remove(produto);
 				System.out.println(nome + " foi removido do estoque");
 				deletado = true;
