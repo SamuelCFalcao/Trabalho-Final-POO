@@ -4,15 +4,15 @@
 
 //     //Sobrescreve método de Produto para mostrar em mL
 //     @Override
-//     public void calculaPeso(float peso) {
+//     public void calculavolume(float volume) {
 //         //Considerando a entrada como em mL
-//         //Se o peso for maior ou igual a 1000 mL
-//         if (peso >= 1000){
-//             peso = peso/1000;
-//             System.out.println(peso+"L");
+//         //Se o volume for maior ou igual a 1000 mL
+//         if (volume >= 1000){
+//             volume = volume/1000;
+//             System.out.println(volume+"L");
 //         }
 //         else{
-//             System.out.println(peso+"mL");
+//             System.out.println(volume+"mL");
 //         }
 //     }
 // }
@@ -22,15 +22,15 @@ public class Bebida extends Produto{
         this.nome = nome;
     }
 
-    public void removerEstoque(int quantidade){
-        Estoque.removerEstoque(quantidade);
+    public void removerProduto(String nome){
+        Estoque.removerProduto(nome);
     }
 
-    public void calculaVolume(float peso) {
-        if(peso >= 1000) {
-            peso = peso/1000;
-            System.out.println(peso + "L");
+    public void calculaVolume(float volume) {
+        if(volume >= 1000) {
+            volume = volume/1000;
+            System.out.println(volume + "L");
         } else {
-            System.out.println(peso + " mL");
+            System.out.println(volume + " mL");
     }
 }
