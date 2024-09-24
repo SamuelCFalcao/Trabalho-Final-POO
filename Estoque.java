@@ -1,46 +1,34 @@
-public abstract class Estoque {
-    protected String nome;
-    protected double preco;
-    protected int quantidade;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Estoque(String nome, double preco, int quantidade) {
-        this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
-    }
+public abstract class Estoque{
+    //Variável interna para ter uma lista de produtos
+    private static List<Produto> produtos = new ArrayList<>();
+	
+	public static void create(Produto p) {
+        this.produtos.add(p);
+	}
 
-    public abstract void exibirDetalhes(); 
-
-    public void adicionarEstoque(int quantidade) {
-        this.quantidade += quantidade;
-    }
-
-    public void removerEstoque(int quantidade) {
-        this.quantidade -= quantidade;
-    }
-
-    // Getters e Setters
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
+	public static void read() {
+        //Lista todos os produtos
+		for (Produto p: this.produtos) {
+			System.out.println(p);
+		}
+	}
+	
+	public static void update(String nome, int qtdComprada) {
+		int qtdFinal;
+		for (Produto p: this.produtos) {
+			if (p.getNome() == nome) {
+				qtdFinal = p.getQuantidade(); - qtdaComprada;
+				if (qtdFinal <= 0){
+					produtos.removeIf(p -> p.getNome() == nome);
+				}
+				else{
+					p.setQuantidade(qtdFinal);
+				}
+				break;
+			}
+		}
+	}
 }
