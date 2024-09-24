@@ -1,14 +1,7 @@
 public abstract class Produto {
     public String nome;
     protected float preco;
-
-    public String setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void getNome() {
-        return nome;
-    }
+    private int quantidade;
 
     public float setPreco(float preco) {
         this.preco = preco;
@@ -17,4 +10,14 @@ public abstract class Produto {
     public void getPreco() {
         return preco;
     }
+
+    public int setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void getQuantidade() {
+        return quantidade;
+    }
+
+    public abstract void calculaPeso();
 }
