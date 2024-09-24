@@ -2,60 +2,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Estoque {
-    // Variável interna para ter uma lista de produtos
+    //Variável interna para ter uma lista de produtos
     private static List<Produto> produtos = new ArrayList<>();
 
-	public void adicionarProduto(Produto produto) {
+	//Adiciona um produto novo ao estoque
+	public static void adicionarProduto(Produto produto) {
 		produtos.add(produto);
-		System.out.println(produto + "adicionado ao estoque.");
+		System.out.println("Adicionadas "+produto.getQuantidade()+" unidades de "+produto.nome());
 	}
-	
-	// public static void create(Produto p) {
-    //     this.produtos.add(p);
-	// }
 
-	public static void read() {
-        // Lista todos os produtos
-		for (Produto p: this.produtos) {
-			System.out.println(p);
+	//Lista todos os produtos no estoque
+	public static void listarProdutos() {
+		for (Produto produto: produtos) {
+			System.out.println(produto);
 		}
 	}
 
-	public void removerProduto(String nome) {
-		for(int i = 0; i < produtos.size(); i++) {
-			if(produtos.get(i).getNome().equalIsIgnoreCase(nome)) {
-				produtos.remove(i);
-				System.out.println(nome + " foi removido do estoque.");
-				return;
-		} else {
-			System.out.println("Produto não encontrado no sistema.");
-		}
-	}
-
-	public void atualizarQuantidade(String nome, int novaQuantidade) {
+	//Atualizar quantidade de produtos no estoque
+	public static void atualizarQuantidade(String nome, int novaQuant) {
+		//Variável que verifica se o produto existe no estoque
+		boolean disponivel = false;
         for (Produto produto : produtos) {
-            if (produto.nome.equalsIgnoreCase(nome)) {
-                produto.setQuantidade(novaQuantidade);
-                System.out.println("Quantidade do produto " + nome + " atualizada para " + novaQuantidade);
-                return;
+            if (produto.getNome().equalsIgnoreCase(nome)) {
+                produto.setQuantidade(novaQuant);
+                System.out.println("Quantidade do produto " + nome + " atualizada para " + novaQuant+" unidades");
+				disponivel = true;
             }
         }
-        System.out.println("Produto não encontrado.");
+		if(!disponivel){
+			System.out.println("Produto não encontrado");
+		}
     }
 	
-	// public static void update(String nome, int qtdComprada) {
-	// 	int qtdFinal;
-	// 	for (Produto p: this.produtos) {
-	// 		if (p.getNome() == nome) {
-	// 			qtdFinal = p.getQuantidade(); - qtdaComprada;
-	// 			if (qtdFinal <= 0){
-	// 				produtos.removeIf(p -> p.getNome() == nome);
-	// 			}
-	// 			else{
-	// 				p.setQuantidade(qtdFinal);
-	// 			}
-	// 			break;
-	// 		}
-	// 	}
-	// }
+	//Remove um produto do estoque
+	public static void removerProduto(String nome) {
+		boolean deletado = false;
+		for(Produto produto : produtos) {
+			if(produtos.getNome().equalIsIgnoreCase(nome)) {
+				produtos.remove(i);
+				System.out.println(nome + " foi removido do estoque");
+				deletado = true;
+			} 
+		}
+		if(!deletado){
+			System.out.println("Produto não encontrado");
+		}
+	}
 }
+
