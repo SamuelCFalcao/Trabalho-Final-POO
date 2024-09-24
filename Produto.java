@@ -1,23 +1,31 @@
 public abstract class Produto {
-    public String nome;
+    protected String nome;
     protected float preco;
     private int quantidade;
 
-    public float setPreco(float preco) {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 
-    public void getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public int setQuantidade(int quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
-    public void getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public abstract void calculaPeso();
+    public abstract void calculaVolume(); 
 }
