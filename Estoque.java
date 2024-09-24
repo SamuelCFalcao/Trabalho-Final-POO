@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Estoque{
-    //Variável interna para ter uma lista de produtos
+public abstract class Estoque {
+    // Variável interna para ter uma lista de produtos
     private static List<Produto> produtos = new ArrayList<>();
 	
 	public static void create(Produto p) {
@@ -10,7 +10,7 @@ public abstract class Estoque{
 	}
 
 	public static void read() {
-        //Lista todos os produtos
+        // Lista todos os produtos
 		for (Produto p: this.produtos) {
 			System.out.println(p);
 		}
