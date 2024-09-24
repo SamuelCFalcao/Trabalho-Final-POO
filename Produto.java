@@ -27,5 +27,5 @@ public abstract class Produto {
         return quantidade;
     }
 
-    public abstract void calculaVolume(); 
+    public abstract void calculaVolume(float peso); 
 }
