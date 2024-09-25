@@ -30,7 +30,6 @@ public class Main {
 	System.out.println(	Venda.totalPagar(bombomComprado, bombom.getPreco()));
 
 	fulano.receberPedido(salgadoComprado, coxinha.getNome());
-	System.out.println(	Venda.totalPagar(salgadoComprado, coca.getPreco()));
-
+	System.out.println(	Venda.totalPagar(salgadoComprado, coxinha.getPreco()));
 	}
 }
