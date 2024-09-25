@@ -1,23 +1,14 @@
 public class Atendente {
     private final String nome;
-    private final String cpf;
+    private final String cargo;
 
-    public Atendente(String nome, String cpf) {
+    public Atendente(String nome, String cargo) {
         this.nome = nome;
-        this.cpf = cpf;
+        this.cargo = cargo;
     }
 
     public void receberPedido(int quantidade, String mercadoria) {
-        // Exibe o nome do atendente e o CPF
-        System.out.println("Pedido recebido pelo atendente " + nome + " (CPF: " + formatarCPF(cpf) + ")");
-        // Chama o método de venda com um produto específico
+        System.out.println("Pedido recebido pelo " + cargo+", " + nome);
         Venda.realizarPedido(quantidade, mercadoria);
-    }
-
-    private String formatarCPF(String cpf) {
-        if (cpf.length() == 11) {
-            return cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9);
-        }
-        return cpf;
     }
 }
