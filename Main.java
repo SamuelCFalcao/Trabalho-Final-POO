@@ -17,20 +17,20 @@ public class Main {
 	bombom.setPreco((float)1.50);
 	Estoque.adicionarProduto(bombom);
 
-	Bebida bebida = new Bebida();
-	bebida.setQuantidade(50);
-	bebida.setNome("Coca");
-	bebida.setPreco((float) 4.50);
-	Estoque.adicionarProduto(bebida);
+	Bebida coca = new Bebida();
+	coca.setQuantidade(50);
+	coca.setNome("Coca");
+	coca.setPreco((float) 4.50);
+	Estoque.adicionarProduto(coca);
 	
-	fulano.receberPedido(bebidaComprada, "Coca");
-	System.out.println(	Venda.totalPagar(bebidaComprada, bebida.getPreco()));
+	fulano.receberPedido(bebidaComprada, coca.getNome());
+	System.out.println(	Venda.totalPagar(bebidaComprada, coca.getPreco()));
 
-	fulano.receberPedido(bombomComprado, "Bombom");
+	fulano.receberPedido(bombomComprado, bombom.getNome());
 	System.out.println(	Venda.totalPagar(bombomComprado, bombom.getPreco()));
 
-	fulano.receberPedido(salgadoComprado, "Coxinha");
-	System.out.println(	Venda.totalPagar(salgadoComprado, bebida.getPreco()));
+	fulano.receberPedido(salgadoComprado, coxinha.getNome());
+	System.out.println(	Venda.totalPagar(salgadoComprado, coca.getPreco()));
 
 	}
 }
