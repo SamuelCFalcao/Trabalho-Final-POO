@@ -1,6 +1,5 @@
-public class Main{
+public class Main {
 	public static void main(String[] args) {
-		//TODO Implementação da classe
 	int bebidaComprada = 4;
 	int bombomComprado = 10;
 	int salgadoComprado = 2;
