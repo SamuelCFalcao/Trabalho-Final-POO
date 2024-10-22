@@ -1,4 +1,4 @@
-public class Bebida extends Produto{
+public class Bebida extends Produto {
 
     public void removerProduto(String nome){
         Estoque.removerProduto(nome);
