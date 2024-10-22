@@ -1,7 +1,7 @@
-public class Doce extends Produto{   
+public class Doce extends Produto {   
     public String sabor;
     
-    public void removerProduto(String nome){
+    public void removerProduto(String nome) {
         Estoque.removerProduto(nome);
     }
     @Override
